@@ -3,4 +3,4 @@ package = "netlify-plugin-no-more-404"
 
   [plugins.inputs]
   on404 = "redirect"
-  redirect = "/index.html"
+  debugMode = false
