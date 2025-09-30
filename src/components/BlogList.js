@@ -8,7 +8,7 @@ export default function BlogList() {
   useEffect(() => {
     axios
       .get(
-        "https://api.github.com/repos/kuldipdeshmukh/financeteach/contents/content/blog"
+        "https://api.github.com/repos/YOUR_USERNAME/marathi-investments-blog/contents/content/blog"
       )
       .then((res) => setBlogs(res.data))
       .catch((err) => console.error(err));
