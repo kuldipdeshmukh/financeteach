@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { marked } from "marked";
+
+const blogContent = {
+  "investment-tips-1": "सोप्या मार्गाने पैसे वाढवण्यासाठी टिप्स येथे दिल्या आहेत...",
+  "investment-tips-2": "शेअर मार्केटमध्ये सुरक्षित गुंतवणूक करण्याचे मार्ग...",
+  "investment-tips-3": "दीर्घकालीन संपत्ती निर्माण करण्याचे मार्ग..."
+};
 
 export default function BlogPage() {
   const { slug } = useParams();
-  const [content, setContent] = useState("");
+  const content = blogContent[slug] || "Blog content not found.";
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://raw.githubusercontent.com/kuldipdeshmukh/financeteach/main/content/blog/${slug}.md`
-      )
-      .then((res) => setContent(marked(res.data)))
-      .catch((err) => console.error(err));
-  }, [slug]);
-
-  return <div style={{ padding: "20px" }} dangerouslySetInnerHTML={{ __html: content }} />;
+  return (
+    <div style={{ padding: "2rem" }}>
+      <h1>{slug.replace(/-/g, " ")}</h1>
+      <p>{content}</p>
+    </div>
+  );
 }

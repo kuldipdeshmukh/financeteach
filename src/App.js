@@ -1,14 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BlogList from "./components/BlogList";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
 import BlogPage from "./components/BlogPage";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<BlogList />} />
-        <Route path="/blog/:slug" element={<BlogPage />} />
-      </Routes>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog/:slug" element={<BlogPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
