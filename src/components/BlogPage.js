@@ -10,7 +10,7 @@ export default function BlogPage() {
   useEffect(() => {
     axios
       .get(
-        `https://raw.githubusercontent.com/YOUR_USERNAME/marathi-investments-blog/main/content/blog/${slug}.md`
+        `https://raw.githubusercontent.com/kuldipdeshmukh/financeteach/main/content/blog/${slug}.md`
       )
       .then((res) => setContent(marked(res.data)))
       .catch((err) => console.error(err));
