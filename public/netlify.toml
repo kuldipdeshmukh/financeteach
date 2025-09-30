@@ -1,6 +1,0 @@
-[[plugins]]
-package = "netlify-plugin-no-more-404"
-
-  [plugins.inputs]
-  on404 = "redirect"
-  debugMode = false
